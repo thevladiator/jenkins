@@ -39,15 +39,8 @@ pipeline {
         */
         stage('get code') {
             steps {
-                // Get some code from a GitHub repository
-                // git credentialsId: 'd37ac433-51df-41f5-a6c1-bcc9c636b5b0', url: 'https://bitbucket.cambiumnetworks.com/scm/gettsupport/go-getter.git'
-                // git credentialsId: 'd37ac433-51df-41f5-a6c1-bcc9c636b5b0', url: 'ssh://git@bitbucket.cambiumnetworks.com:7999/gettsupport/go-getter.git'
-                //sh 'cp -r ~/userContent/src/go-getter/*  $WORKSPACE'
-                
                 dir("${env.GETT_REPO}") {
-                    git url: 'https://github.com/thevladiator/gotest.git'
-                    // sh 'pwd'
-                    // sh 'git clone ssh://git@bitbucket.cambiumnetworks.com:7999/gettsupport/go-getter.git'
+                    git clone url: 'https://github.com/thevladiator/gotest.git'
                 }
             }
         }
