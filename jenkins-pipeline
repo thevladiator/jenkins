@@ -40,7 +40,7 @@ pipeline {
         stage('get code') {
             steps {
                 dir("${env.GETT_REPO}") {
-                    git clone url: 'https://github.com/thevladiator/gotest.git'
+                    git url: 'https://github.com/thevladiator/gotest.git'
                 }
             }
         }
